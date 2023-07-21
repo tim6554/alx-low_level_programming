@@ -6,13 +6,11 @@
  *
  **/
 
-int main(void)
+char main(void)
   
 {
    _putchar ("_putchar");
 
   return(0);
-
-
 
 }
