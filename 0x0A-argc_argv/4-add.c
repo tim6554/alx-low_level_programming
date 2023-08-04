@@ -1,33 +1,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include <string.h>
 
 /**
- * main -add positive numbers
- * @argc: int
- * @argv: char *
- * Return: always 0
+ * main - adds positive numbers
+ * @argc: argument count
+ * @argv: argument vector
+ *
+ * Return: 1 if one of the numbers contains symbols that are not digits,
+ * otherwise return 0
  */
 
 int main(int argc, char *argv[])
 {
-int i;
-int sum = 0;
+	int a, b, addition = 0;
 
-if (argc > 1)
-{
-	for (i = 1; i <= (argc - 1); i++)
+	for (a = 1; a < argc; a++)
 	{
-		sum = sum + atoi(argv[i]);
-
+		for (b = 0; argv[b][b] != '\0'; b++)
+		{
+			if (!isdigit(argv[a][b]))
+			{
+				printf("Error\n");
+				return (1);
+			}
+		}
+		addition += atoi(argv[a]);
 	}
-	printf("%d\n", sum);
-}
-
-if (argc == 1)
-	printf("0\n");
-
-return (0);
-
+	printf("%d\n", addition);
+	return (0);
 }
