@@ -1,1 +1,0 @@
-this is where i try out some learning objectives dont take in to account of anything.
